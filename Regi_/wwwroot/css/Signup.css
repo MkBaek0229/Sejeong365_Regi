@@ -1,0 +1,244 @@
+﻿/* Body 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-weight: 900;
+    font-size: 50px;
+    color: #1A73E8;
+    text-align: center;
+    display: inline-block;
+}
+
+/* 작은 제목 스타일 */
+h2 {
+    color: #555;
+}
+
+/* 순서 목록 스타일 */
+ol {
+    margin-left: 20px;
+}
+
+/* 목록 항목 스타일 */
+li {
+    margin-bottom: 15px;
+}
+
+/* Form 요소 스타일 */
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 체크박스 및 라디오 버튼 스타일 */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* 정보 영역 스타일 */
+#guardian-identity-verification-info,
+#identity-verification-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+    #guardian-identity-verification-info p,
+    #identity-verification-info p {
+        margin-bottom: 5px;
+        color: #666;
+    }
+
+    #guardian-identity-verification-info h2,
+    #identity-verification-info h2 {
+        color: #333;
+        margin-top: 0;
+    }
+
+/* 컨테이너 스타일 */
+.c-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .c-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+/* 약관 동의 영역 스타일 */
+#terms-agreement {
+    overflow-y: scroll;
+    max-height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* 체크박스 영역 스타일 */
+.checkbox {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    align-items: center;
+}
+
+    .checkbox input[type="checkbox"],
+    .checkbox label {
+        margin-left: 5px;
+        font-size: 18px;
+    }
+
+    .checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+        
+    .agecheck input[type="radio"],
+    .agecheck label {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+    .agecheck input[type="radio"] {
+        width: 30px;
+        height: 30px;
+    }
+
+.age-selection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+     
+/* 버튼 영역 스타일 */
+.button_box {
+    margin: 40px 0;
+}
+
+    .button_box ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        .button_box ul li {
+            margin: 0 10px;
+        }
+
+    .button_box a {
+        display: inline-block;
+        padding: 20px 120px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .button_box a:hover {
+            background-color: #0056b3;
+        }
+
+        .button_box a.btn {
+            background-color: #ccc;
+        }
+
+            .button_box a.btn:hover {
+                background-color: #999;
+            }
+@media (max-width: 768px) {
+
+    .button_box ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button_box ul li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .button_box a {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+
+    /* 단계 표시 스타일 */
+    .join_step {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+        .join_step .step {
+            font-size: 14px;
+            color: #666;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+            .join_step .step:last-child {
+                border-right: none;
+            }
+
+            .join_step .step.current {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .join_step .step strong {
+                display: block;
+                margin-top: 5px;
+            }
+
+            .join_step .step.current strong {
+                color: #fff;
+            }
+
+
+    /* 모바일 환경에서의 단계 표시 스타일 */
+    @media (max-width: 600px) {
+        .join_step {
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .join_step .step {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+                .join_step .step:last-child {
+                    margin-bottom: 0;
+                }
+    }

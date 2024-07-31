@@ -1,0 +1,163 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "약관 동의";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>약관 동의</title>
+    <!-- 필요한 스타일시트 링크 또는 스타일 태그를 추가하세요. -->
+    <link rel="stylesheet" href="~/css/signup.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <ul class="join_step">
+            <li class="step step1 current"><span>STEP1</span><strong>약관동의</strong></li>
+            <li class="step step2"><span>STEP2</span><strong>사용자 확인</strong></li>
+            <li class="step step3"><span>STEP3</span><strong>계정 가입</strong></li>
+            <li class="step step4"><span>STEP4</span><strong>가입 완료</strong></li>
+        </ul>
+        <div class="c-container">
+            <h2>약관 내용</h2>
+            <div id="terms-agreement">
+                <ol>
+                    <li>
+                        <strong>개인정보 수집 및 이용 동의</strong><br>
+                        회원가입 시 수집하는 개인정보는 [회사명]의 서비스 제공을 위한 목적으로만 사용됩니다. 수집되는 개인정보의 종류 및 이용 목적, 제3자 제공에 관한 자세한 내용은 개인정보 처리방침을 참조하시기 바랍니다.
+                    </li>
+                    <li>
+                        <strong>서비스 이용 약관</strong><br>
+                        <ol>
+                            <li>회원은 서비스를 이용함에 있어서 관련 법령 및 회사가 제공하는 안내, 서비스 운영 정책 등을 준수하여야 합니다.</li>
+                            <li>
+                                회원은 서비스를 이용함에 있어 다음의 행위를 하여서는 안 됩니다:
+                                <ul>
+                                    <li>타인의 개인정보를 부정하게 사용하는 행위</li>
+                                    <li>회사의 서비스 운영에 지장을 주는 행위</li>
+                                    <li>서비스 이용을 통해 얻은 정보를 상업적으로 활용하는 행위 등</li>
+                                </ul>
+                            </li>
+                            <li>회원은 서비스 이용 시 발생하는 모든 활동에 대한 책임을 지며, 회사는 회원의 서비스 이용에 따라 발생하는 결과에 대한 책임을 지지 않습니다.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>계정 보안</strong><br>
+                        <ol>
+                            <li>회원은 자신의 계정 및 비밀번호를 안전하게 관리해야 하며, 계정 정보 유출로 인한 손실이 발생할 경우 회사는 책임을 지지 않습니다.</li>
+                            <li>회원은 자신의 계정을 타인에게 양도하거나 대여하여서느 안 됩니다.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>콘텐츠 및 권리</strong><br>
+                        <ol>
+                            <li>회원이 서비스를 통해 게시한 콘텐츠에 대한 권리는 해당 회원에게 있으며, 회사는 이를 임의로 이용하거나 변경하지 않습니다.</li>
+                            <li>회원이 서비스를 통해 게시한 콘텐츠가 타인의 저작권을 침해할 경우, 해당 회원은 책임을 집니다.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>서비스 변경 및 해지</strong><br>
+                        <ol>
+                            <li>회원은 언제든지 자신의 계정을 삭제하거나 서비스 이용을 중단할 수 있습니다.</li>
+                            <li>회원이 계정을 삭제하거나 서비스 이용을 중단할 경우, 관련 정보를 일정 기간 동안 보돤될 수 있습니다.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>분쟁 해결</strong><br>
+                        <ol>
+                            <li>회사와 회원 간 발생한 분쟁에 대해 상호 협의하여 해결하려 합니다.</li>
+                            <li>분쟁이 해결되지 않을 경우, 관련 법령에 따라 분쟁을 해결할 수 있습니다.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">본 약관에 동의합니다.</label>
+            </div>
+            <div class="agecheck">
+                <h2>나이 확인</h2>
+                <p>회원 가입을 진행하기 전, 나이를 확인해주세요.</p>
+                <div class="age-selection">
+                    <input type="radio" id="under_14" name="age" value="under_14" required onclick="showGuardianInfo()" checked>
+                    <label for="under_14">학생(14세 미만)</label>
+                    <input type="radio" id="over_14" name="age" value="over_14" required onclick="showIdentityInfo()">
+                    <label for="over_14">학생(14세 이상)</label>
+                </div>
+            </div>
+            <div id="guardian-identity-verification-info" style="display: none;">
+                <h2>보호자 본인 확인</h2>
+                <p>
+                    - 개인정보보호법에 따라 만 14세 미만 어린이(또는 학생)는 보호자(법적대리인)의 동의가 필요하며, 보호자 동의를 거쳐서 가입이 됩니다.<br>
+                    - 학부모 휴대폰 인증시 신용평가기관을 통하여 본인확인을 진행하며, 본인확인 및 아이디 찾기, 비밀번호찾기시 본인 확인 수단으로 사용됩니다.<br>
+                    - 입력하신 소중한 개인정보는 회원님의 명백한 동의 없이 공개 또는 제3자에게 제공되지 않으며, 회원 약관 및 개인정보정책에 따라 보호됩니다.
+                </p>
+            </div>
+
+            <div id="identity-verification-info" style="display: none;">
+                <h2>본인 확인</h2>
+                <p>
+                    - 계정 생성시 신용평가사의 휴대폰 인증을 통하여 본인확인을 진행하며, 인증받은 휴대폰 정보는 아이디 찾기, 비밀번호찾기시 본인 확인 수단으로 사용됩니다.<br>
+                    - 입력하신 소중한 개인정보는 회원님의 명백한 동의 없이 공개 또는 제3자에게 제공되지 않으며, 회원 약관 및 개인정보정책에 따라 보호됩니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="button_box">
+            <ul>
+                <li>
+                    <a class="next" href="Authentication" onclick="validateForm()">다음</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Index" class="btn">취소</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>function validateForm() {
+            var agreementCheckbox = document.getElementById("agree");
+            if (!agreementCheckbox.checked) {
+                alert("약관에 동의해주세요.");
+                event.preventDefault(); // 다음으로 이동하는 기본 동작을 취소
+                return;
+            }
+
+            var ageRadios = document.getElementsByName("age");
+            var ageChecked = false;
+            for (var i = 0; i < ageRadios.length; i++) {
+                if (ageRadios[i].checked) {
+                    ageChecked = true;
+                    break;
+                }
+            }
+            if (!ageChecked) {
+                alert("나이를 선택해주세요.");
+                event.preventDefault();
+                return;
+            }
+        }
+
+        function showGuardianInfo() {
+            document.getElementById("guardian-identity-verification-info").style.display = "block";
+            document.getElementById("identity-verification-info").style.display = "none";
+        }
+
+        function showIdentityInfo() {
+            document.getElementById("guardian-identity-verification-info").style.display = "none";
+            document.getElementById("identity-verification-info").style.display = "block";
+        }
+
+        window.onload = function () {
+            // "학생(14세 미만)" 라디오 버튼을 체크하고 해당 내용 표시
+            document.getElementById("under_14").checked = true;
+            showGuardianInfo();
+        }</script>
+</body>
+</html>

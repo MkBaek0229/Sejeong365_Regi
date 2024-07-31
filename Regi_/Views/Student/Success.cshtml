@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "가입 완료";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Success.css" />
+</head>
+<body>
+    <div class="container">
+        <ul class="join_step">
+            <li class="step step1">STEP1<strong>약관동의</strong></li>
+            <li class="step step2">STEP2<strong>사용자 확인</strong></li>
+            <li class="step step3">STEP3<strong>계정 가입</strong></li>
+            <li class="step step4 current">STEP4<strong>가입 완료</strong></li>
+        </ul>
+        <div class="contact-header">
+            <h1>가입이 완료되었습니다!</h1>
+            <p>환영합니다! 회원가입이 성공적으로 완료되었습니다. 저희 서비스를 이용해 주셔서 감사합니다.</p>
+        </div>
+        <div class="contact-info">
+            <h3>기본 정보</h3>
+            <div class="basic_info">
+                <ul>
+                    <li>
+                        <div class="circle">1</div>
+                        <div class="content">
+                            <span>소속 기관</span>
+                            <input type="text" id="SchoolName" name="SchoolName" value="SchoolName" readonly>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">2</div>
+                        <div class="content">
+                            <span>이름</span>
+                            <input type="text" id="DisplayName" name="DisplayName" value="@ViewBag.DisplayName" readonly>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">3</div>
+                        <div class="content">
+                            <span>입학년도</span>
+                            <input type="text" id="Admission" name="Admission" value="@ViewBag.Admission" readonly />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">4</div>
+                        <div class="content">
+                            <span>계정</span>
+                            <input type="text" id="UserPrincipalName" name="UserPrincipalName" value="@ViewBag.UserPrincipalName" readonly>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+

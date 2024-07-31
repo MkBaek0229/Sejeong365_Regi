@@ -1,0 +1,290 @@
+﻿/* Authentication.css */
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 컨텐츠 스타일 */
+.contant {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .contant {
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+/* 텍스트 스타일 */
+h2 {
+    font-weight: 900;
+    font-size: 32px;
+    color: #1A73E8;
+    display: inline-block;
+}
+
+h3 {
+    font-weight: 600;
+    color: #F25022;
+}
+
+h4 {
+    color: #28a745;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+/* 휴대폰 인증 및 확인 영역 스타일 */
+.phone_authentication span, .phone_check span {
+    font-size: 18px;
+    display: inline-block;
+    width: 130px;
+}
+
+.phone_container,
+.phone_authentication,
+.phone_check,
+.code_container {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+    /* 폼 요소 스타일 */
+    .phone_check input[type="text"],
+    .authentication_code ul li input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 24px;
+        margin-top: 5px;
+    }
+
+    .phone_authentication input[type="text"] {
+        width: 65%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 24px;
+        margin-top: 5px;
+    }
+
+    .phone_authentication ul {
+        padding-left: 0px;
+    }
+    .phone_authentication ul li {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .phone_authentication button {
+        width: 45%;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .phone_check button,
+    .authentication_code ul li button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .phone_authentication button:hover,
+        .phone_check button:hover,
+        .authentication_code ul li button:hover {
+            background-color: #0056b3;
+        }
+
+/* 모바일 환경에서의 폼 요소 스타일 */
+@media (max-width: 768px) {
+    .phone_authentication ul li {
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: normal;
+    }
+    .phone_authentication input[type="text"] {
+        width: 100%;
+       
+    }
+
+    .phone_authentication button {
+        width: 100%;
+    }
+}
+
+/* 휴대폰 인증 정보 영역 스타일 */
+.phone_check {
+    display: flex;
+    flex-direction: column;
+}
+.phone_check ul {
+    padding-left: 0px;
+}
+
+#user_phone {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 인증 코드 입력 영역 스타일 */
+    .authentication_code ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        list-style-type: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+        .authentication_code ul li {
+            margin-right: 10px;
+        }
+
+            .authentication_code ul li:last-child {
+                margin-right: 0;
+            }
+
+            .authentication_code ul li input[type="text"] {
+                text-align: center;
+                background-color: rgb(241 245 249);
+            }
+
+@media (max-width: 768px) {
+    .authentication_code ul {
+        flex-direction: column;
+    }
+
+        .authentication_code ul li {
+            margin-right: 0;
+        }
+}
+
+/* 버튼 스타일 */
+.button_box ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+    .button_box ul li {
+        margin: 0 10px;
+    }
+
+.button_box a,
+.button_box button.next {
+    display: inline-block;
+    padding: 20px 100px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+    .button_box a:hover,
+    .button_box button.next:hover {
+        background-color: #0056b3;
+    }
+
+    .button_box a.btn {
+        background-color: #999;
+    }
+
+        .button_box a.btn:hover {
+            background-color: #ccc;
+        }
+
+/* 모바일, 태블릿 화면에서의 버튼 배치 방향 변경 */
+@media (max-width: 768px) {
+    .button_box ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .button_box ul li {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+    .button_box a,
+    .button_box button.next,
+    .button_box a.btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        text-align: center;
+        
+    }
+}
+
+
+
+/* 단계 표시 스타일 */
+.join_step {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+    .join_step .step {
+        font-size: 14px;
+        color: #666;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        flex: 1;
+        text-align: center;
+        position: relative;
+    }
+
+        .join_step .step:last-child {
+            border-right: none;
+        }
+
+        .join_step .step.current {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .join_step .step strong {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .join_step .step.current strong {
+            color: #fff;
+        }
+
+/* 모바일 환경에서의 단계 표시 스타일 */
+@media (max-width: 600px) {
+    .join_step {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,240 @@
+﻿
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 컨텐츠 스타일 */
+.contant {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+    .contant h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #F25022;
+    }
+
+
+
+
+/* 버튼 영역 스타일 */
+.button_box {
+    margin: 40px 0;
+}
+
+    .button_box ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        .button_box ul li {
+            margin: 0 10px;
+        }
+
+    .button_box a {
+        display: inline-block;
+        padding: 20px 120px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .button_box a:hover {
+            background-color: #0056b3;
+        }
+
+        .button_box a.btn {
+            background-color: #ccc;
+        }
+
+            .button_box a.btn:hover {
+                background-color: #999;
+            }
+
+@media (max-width: 768px) {
+
+    .button_box ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .button_box ul li {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+    .button_box a {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+
+
+.basic_info {
+    flex: 2;
+}
+
+    .basic_info ul {
+        padding-left: 0;
+    }
+
+    .basic_info ul li {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .basic_info ul li #directInputToggle {
+            display: flex;
+            margin-left: 25px;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+            .basic_info ul li #directInputToggle input[type="checkbox"] {
+                width: 25px;
+                height: 25px;
+                margin: 0;
+            }
+
+            .basic_info ul li .small-checkbox-label {
+                font-size: 22px;
+                margin-left: 5px;
+            }
+
+
+        .basic_info ul li input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 24px;
+            margin-top: 5px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+
+
+
+.account_info {
+    flex: 2;
+}
+    .account_info ul {
+        padding-left: 0;
+    }
+    .account_info ul li {
+        display: flex;
+        flex-direction: column;
+    }
+        .account_info ul li input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 24px;
+            margin-top: 5px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .account_info ul li p {
+            color: #F25022;
+        }
+        .account_info ul li button {
+            padding: 20px;
+            margin: 40px;
+            border-radius: 5px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: #F25022;
+            border: none;
+            color: white;
+            transition: opacity 0.2s ease;
+        }
+
+            .account_info ul li button:hover {
+                opacity: 0.8;
+                transform: scale(0.97); /* 버튼을 살짝 작게 만듦 */
+            }
+
+            .account_info ul li button:active {
+                transform: scale(0.98);
+            }
+
+
+/* 단계 표시 스타일 */
+.join_step {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+    .join_step .step {
+        font-size: 14px;
+        color: #666;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        flex: 1;
+        text-align: center;
+        position: relative;
+    }
+
+        .join_step .step:last-child {
+            border-right: none;
+        }
+
+        .join_step .step.current {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .join_step .step strong {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .join_step .step.current strong {
+            color: #fff;
+        }
+
+
+/* 모바일 환경에서의 단계 표시 스타일 */
+@media (max-width: 600px) {
+    .join_step {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .join_step .step {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+            .join_step .step:last-child {
+                margin-bottom: 0;
+            }
+}
+
+
+h1 {
+    font-weight: 900;
+    font-size: 48px;
+    color: #1A73E8;
+    text-align: center;
+    display: inline-block;
+}

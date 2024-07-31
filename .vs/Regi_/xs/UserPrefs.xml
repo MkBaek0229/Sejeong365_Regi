@@ -1,0 +1,45 @@
+﻿<Properties StartupConfiguration="{4F325A54-95DB-40B6-902E-15D27ABEEE27}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Regi_/wwwroot/css/site.css">
+    <Files>
+      <File FileName="Regi_/Views/Staff/Authentication.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/Views/Student/AccountRegistration.cshtml" Line="17" Column="17" />
+      <File FileName="Regi_/Views/Student/Authentication.cshtml" Line="98" Column="8" />
+      <File FileName="Regi_/Controllers/StudentController.cs" Line="9" Column="13" />
+      <File FileName="Regi_/Views/Student/Success.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/Views/Student/Signup.cshtml" Line="14" Column="7" />
+      <File FileName="Regi_/Controllers/StaffController.cs" Line="1" Column="1" />
+      <File FileName="Regi_/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Regi_/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/Properties/launchSettings.json" Line="30" Column="29" />
+      <File FileName="Regi_/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Regi_/wwwroot/css/site.css" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Regi_" expanded="True">
+            <Node name="Regi_" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Student" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Regi__ PreferredExecutionTarget="/Applications/Google Chrome 2.app" />
+</Properties>

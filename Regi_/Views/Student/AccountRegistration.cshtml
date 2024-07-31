@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "계정 가입";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/AccountRegistration.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <ul class="join_step">
+            <li class="step step1">STEP1<strong>약관 동의</strong></li>
+            <li class="step step2">STEP2<strong>사용자 확인</strong></li>
+            <li class="step step3 current">STEP3<strong>계정 가입</strong></li>
+            <li class="step step4">STEP4<strong>가입 완료</strong></li>
+        </ul>
+
+        <div class="contant">
+            <h1>계정 가입</h1>
+            <form method="post" action="/Account/Register">
+                <div class="basic_info">
+                    <h2>기본 정보</h2>
+                    <ul>
+                        <li>
+                            <label for="SchoolName">소속 기관</label>
+                            <input type="text" id="SchoolName" name="SchoolName" value="소속 기관 이름" readonly />
+                        </li>
+                        <li>
+                            <label for="DisplayName">이름</label>
+                            <input type="text" id="DisplayName" name="DisplayName" value="사용자 이름" readonly />
+                            <div id="directInputToggle">
+                                <input type="checkbox" id="editDisplayName" name="editDisplayName" onchange="toggleReadonly(this, 'DisplayName')">
+                                <label for="editDisplayName" class="small-checkbox-label">직접 입력</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="Admission">입학 년도</label>
+                            <input type="text" id="Admission" name="Admission" value="2019" readonly />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="account_info">
+                    <h2>계정 정보</h2>
+                    <ul>
+                        <li>
+                            <label for="UserPrincipalName">계정</label>
+                            <input type="text" id="UserPrincipalName" name="UserPrincipalName" required />
+                            <button type="button" onclick="checkAccount()">계정 중복 확인</button>
+                        </li>
+                        <li>
+                            <label for="Password">암호</label>
+                            <input type="password" id="Password" name="Password" required />
+                        </li>
+                        <li>
+                            <label for="ConfirmPassword">암호 확인</label>
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" required />
+                            <p id="passwordPolicy">* 암호 정책은 대문자 / 소문자 / 숫자 / 특수문자 중 3가지 조합으로 생성</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="button_box">
+                    <ul>
+                        <li>
+                            <a class="next" href="Success">다음</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="Index" class="btn">취소</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        function checkAccount() {
+            // 여기에 계정 중복 확인을 위한 스크립트를 추가하세요.
+            alert("계정 중복 확인 기능을 구현하세요.");
+        }
+
+        function toggleReadonly(checkbox, inputId) {
+            var input = document.getElementById(inputId);
+            if (checkbox.checked) {
+                input.removeAttribute('readonly');
+            } else {
+                input.setAttribute('readonly', true);
+            }
+        }
+    </script>
+</body>
+</html>

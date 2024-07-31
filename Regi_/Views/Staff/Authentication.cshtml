@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "인증";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>휴대폰 인증</title>
+    <!-- 필요한 스타일시트 링크 또는 스타일 태그를 추가하세요. -->
+    <link rel="stylesheet" href="~/css/Authentication.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <ul class="join_step">
+            <li class="step step1">STEP1<strong>약관동의</strong></li>
+            <li class="step step2 current">STEP2<strong>사용자 확인</strong></li>
+            <li class="step step3">STEP3<strong>계정 가입</strong></li>
+            <li class="step step4">STEP4<strong>가입 완료</strong></li>
+        </ul>
+        <div class="contant">
+            <!-- 휴대폰 번호 입력 폼 -->
+            <form method="post" action="/Staff/Authentication">
+                <div class="phone_container">
+                    <h2>SMS 인증</h2>
+                    <div class="phone_authentication">
+                        <ul>
+                            <li>
+                                <span>휴대폰</span>
+                                <input type="text" id="phone" name="phone" required>
+                                <button type="button" onclick="requestVerificationCode()">인증번호 받기</button>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span>인증 번호</span>
+                                <input type="text" id="verification_code" name="verification_code" required>
+                                <button type="button" onclick="verifyVerificationCode()">인증번호 확인</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="phone_check">
+                        <h3>휴대폰 인증 정보</h3>
+                        <ul>
+                            <li>
+                                <span>사용자 전화번호</span>
+                                <input type="text" id="user_phone" name="user_phone" required>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="code_container">
+                    <h2>가입 인증</h2>
+                    <div class="authentication_code">
+                        <h4>가입 인증 코드</h4>
+                        <ul>
+                            <li>
+                                <input id="code" maxlength="4" name="code" type="text" value="" onpaste="pasteVerificationCode()">
+                            </li>
+                            <li>
+                                <input id="code2" maxlength="4" name="code2" type="text" value="" onpaste="pasteVerificationCode()">
+                            </li>
+                            <li>
+                                <input id="code3" maxlength="4" name="code3" type="text" value="" onpaste="pasteVerificationCode()">
+                            </li>
+                            <li>
+                                <input id="code4" maxlength="4" name="code4" type="text" value="" onpaste="pasteVerificationCode()">
+                            </li>
+                            <li>
+                                <input id="code5" maxlength="4" name="code5" type="text" value="" onpaste="pasteVerificationCode()">
+                            </li>
+                        </ul>
+                        <p>* 가입 인증 코드는 영문과 숫자로 구성되었으며 대소문자 구분을 하지 않습니다.</p>
+                        <p>* 학교별 인증 코드는 학교 정보부장 선생님 또는 지역의 Microsoft 공인교육 파트너를 통해 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="button_box">
+            <ul>
+                <li>
+                    <button class="next" type="submit">다음</button>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Index" class="btn">취소</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>function requestVerificationCode() {
+            var phoneNumber = document.getElementById('phone').value;
+            if (!phoneNumber) {
+                alert("휴대폰 번호를 입력하시길 바랍니다.");
+                return;
+            }
+
+            var phoneNumberPattern = /^\d{3}-?\d{3,4}-?\d{4}$/; // 예시: 010-1234-5678
+
+            if (!phoneNumberPattern.test(phoneNumber)) {
+                alert("유효하지 않은 전화번호 입니다.");
+                document.getElementById('phone').value = ''; // 잘못된 입력값을 초기화
+                return;
+            }
+
+            // 여기에 인증번호를 요청하는 코드를 추가하세요.
+            alert("인증번호를 요청합니다.");
+        }
+
+        function verifyVerificationCode() {
+            // 여기에 인증번호를 확인하는 코드를 추가하세요.
+            alert("인증이 완료 되었습니다.");
+        }
+
+        function pasteVerificationCode() {
+            // 붙여넣기한 내용을 가져옴
+            var clipboardData = event.clipboardData || window.clipboardData;
+            var pastedData = clipboardData.getData('Text').trim();
+
+            // 각 입력칸에 붙여넣은 내용을 분할하여 할당
+            var codes = pastedData.split('-');
+            var codeInputs = document.querySelectorAll('input[name^="code"]');
+
+            // 분할된 내용을 각 입력칸에 할당
+            for (var i = 0; i < codes.length && i < codeInputs.length; i++) {
+                codeInputs[i].value = codes[i];
+            }
+        }</script>
+</body>
+</html>
